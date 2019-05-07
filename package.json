@@ -1,0 +1,26 @@
+{
+  "name": "javascript-string-class",
+  "version": "1.0.0",
+  "description": "An extension of the String class in javascript by adding new methods using Prototype Oriented Programming",
+  "main": "index.js",
+  "directories": {
+    "test": "jest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbetangJoseph/javascript-string-class.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbetangJoseph/javascript-string-class/issues"
+  },
+  "homepage": "https://github.com/AbetangJoseph/javascript-string-class#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
