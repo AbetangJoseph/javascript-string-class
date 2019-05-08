@@ -45,4 +45,12 @@ describe('STRING METHODS', function() {
 			expect(string.isQuestion()).toBeFalsy();
 		});
 	});
+
+	describe('word', function() {
+		it('should return a list of the words in the string, as an Array', function() {
+			var string = 'A software engineer at 25';
+			expect(string.word()).toContain('engineer');
+			expect(string.word()).not.toContain(25);
+		});
+	});
 });
