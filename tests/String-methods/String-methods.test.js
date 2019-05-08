@@ -33,4 +33,16 @@ describe('STRING METHODS', function() {
 			expect(string.ucFirst()).toEqual('I Love Javascript');
 		});
 	});
+
+	describe('isQuestion', function() {
+		it('should return true if the string is a question', function() {
+			var string = 'can you swim?';
+			expect(string.isQuestion()).toBeTruthy();
+		});
+
+		it('should return false if the string is not a question', function() {
+			var string = 'can you swim';
+			expect(string.isQuestion()).toBeFalsy();
+		});
+	});
 });
