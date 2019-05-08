@@ -40,6 +40,6 @@ String.prototype.ucFirst = function() {
 This method returns true if the string is a question
 */
 String.prototype.isQuestion = function() {
-	var regExPattern = /\w+\?$/g;
+	var regExPattern = /\w+\?$/gi;
 	return regExPattern.test(this);
 };
