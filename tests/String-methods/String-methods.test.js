@@ -5,6 +5,7 @@ describe('STRING METHODS', function() {
     it('should return false if the string contains vowels', function() {
       var string1 = 'rhythm crypt';
       expect(string1.hasVowels()).toBeFalsy();
+      expect(typeof string1.hasVowels()).toMatch('boolean');
     });
 
     it('should return true if the string contains vowels', function() {
@@ -17,6 +18,7 @@ describe('STRING METHODS', function() {
     it('should return a string with all its characters in uppercase', function() {
       var string = 'a capitalized sentence';
       expect(string.toUpper()).toEqual('A CAPITALIZED SENTENCE');
+      expect(typeof string.toUpper()).toEqual('string');
     });
   });
 
@@ -24,6 +26,7 @@ describe('STRING METHODS', function() {
     it('should return a string with all its characters in lowercase', function() {
       var string = 'A LOWER CASE SENTENCE';
       expect(string.toLower()).toEqual('a lower case sentence');
+      expect(typeof string.toLower()).toEqual('string');
     });
   });
 
@@ -31,6 +34,7 @@ describe('STRING METHODS', function() {
     it('should return a string with the first character capitalized', function() {
       var string = 'i love javascript';
       expect(string.ucFirst()).toEqual('I Love Javascript');
+      expect(typeof string.ucFirst()).toEqual('string');
     });
   });
 
@@ -38,11 +42,13 @@ describe('STRING METHODS', function() {
     it('should return true if the string is a question', function() {
       var string = 'can you swim?';
       expect(string.isQuestion()).toBeTruthy();
+      expect(typeof string.isQuestion()).toEqual('boolean');
     });
 
     it('should return false if the string is not a question', function() {
       var string = 'can you swim';
       expect(string.isQuestion()).toBeFalsy();
+      expect(typeof string.isQuestion()).toEqual('boolean');
     });
   });
 
@@ -50,6 +56,7 @@ describe('STRING METHODS', function() {
     it('should return a list of the words in the string, as an Array', function() {
       var string = 'A software engineer at 25.';
       expect(string.words()).toContain('engineer');
+      expect(typeof string.words()).toEqual('object');
     });
   });
 
@@ -57,6 +64,7 @@ describe('STRING METHODS', function() {
     it('should return the number of words in the string', function() {
       var string = 'Decagon software institute, No.1 in Nigeria';
       expect(string.wordCount()).toEqual(6);
+      expect(typeof string.wordCount()).toEqual('number');
     });
   });
 
@@ -66,6 +74,7 @@ describe('STRING METHODS', function() {
       var number2 = '1002388432.00';
       expect(number1.toCurrency()).toEqual('11,111.11');
       expect(number2.toCurrency()).toEqual('1,002,388,432.00');
+      expect(typeof number2.toCurrency()).toEqual('string');
     });
   });
 
@@ -113,6 +122,7 @@ describe('STRING METHODS', function() {
       expect(number1.isDigit()).toBeFalsy();
       expect(number2.isDigit()).toBeTruthy();
       expect(number3.isDigit()).toBeFalsy();
+      expect(typeof number3.isDigit()).toEqual('boolean');
     });
   });
 });
