@@ -104,4 +104,15 @@ describe('STRING METHODS', function() {
       expect(typeof number2.numberWords()).toEqual('string');
     });
   });
+
+  describe('isDigit', function() {
+    it('should return true if the string is a one-number digit', function() {
+      var number1 = '34';
+      var number2 = '3';
+      var number3 = '';
+      expect(number1.isDigit()).toBeFalsy();
+      expect(number2.isDigit()).toBeTruthy();
+      expect(number3.isDigit()).toBeFalsy();
+    });
+  });
 });
