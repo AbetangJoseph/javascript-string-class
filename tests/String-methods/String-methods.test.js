@@ -19,4 +19,11 @@ describe('STRING METHODS', function() {
 			expect(string.toUpper()).toEqual('A CAPITALIZED SENTENCE');
 		});
 	});
+
+	describe('toLower', function() {
+		it('should return a string with all its characters in lowercase', function() {
+			var string = 'A LOWER CASE SENTENCE';
+			expect(string.toLower()).toEqual('a lower case sentence');
+		});
+	});
 });
