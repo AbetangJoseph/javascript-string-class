@@ -94,4 +94,14 @@ describe('STRING METHODS', function() {
       expect(typeof string.alternatingCase()).toEqual('string');
     });
   });
+
+  describe('numberWords', function() {
+    it('should return the numbers in words', function() {
+      var number1 = '325';
+      var number2 = '911';
+      expect(number1.numberWords()).toMatch('three two five');
+      expect(number2.numberWords()).toMatch('nine one one');
+      expect(typeof number2.numberWords()).toEqual('string');
+    });
+  });
 });
