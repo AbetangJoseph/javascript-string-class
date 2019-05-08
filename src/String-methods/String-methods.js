@@ -58,3 +58,12 @@ This method returns the number of words in the string
 String.prototype.wordCount = function() {
   return this.words().length;
 };
+
+/* 
+This method returns a currency representation of the String.
+e.g it changes '11111.11' to '11,111.11'
+*/
+String.prototype.toCurrency = function() {
+  var regExPattern = /\d(?=(\d{3}){1,}\.)/g;
+  return this.replace(regExPattern, '$&,');
+};
