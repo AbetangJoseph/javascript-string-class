@@ -35,3 +35,11 @@ String.prototype.ucFirst = function() {
 		return word[0].toUpper() + word.substring(1);
 	});
 };
+
+/* 
+This method returns true if the string is a question
+*/
+String.prototype.isQuestion = function() {
+	var regExPattern = /\w+\?$/g;
+	return regExPattern.test(this);
+};
