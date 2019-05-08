@@ -87,3 +87,14 @@ String.prototype.inverseCase = function() {
     return !alphabet.match(/[a-z]/) ? alphabet.toLower() : alphabet.toUpper();
   });
 };
+
+/* 
+This method returns each letter in the string as an inverse of its current case
+e.g it changes 'Onomatopoeia' to 'oNoMaToPoEiA'
+*/
+String.prototype.alternatingCase = function() {
+  var regExPattern = /[a-z]/gi;
+  return this.replace(regExPattern, function(alphabet, index) {
+    return index % 2 === 0 ? alphabet.toLower() : alphabet.toUpper();
+  });
+};
