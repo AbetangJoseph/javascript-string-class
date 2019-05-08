@@ -86,4 +86,12 @@ describe('STRING METHODS', function() {
       expect(typeof string.inverseCase()).toEqual('string');
     });
   });
+
+  describe('alternatingCase', function() {
+    it('should return the letters in alternating cases starting with a lower case', function() {
+      var string = 'Onomatopoeia';
+      expect(string.alternatingCase()).toEqual('oNoMaToPoEiA');
+      expect(typeof string.alternatingCase()).toEqual('string');
+    });
+  });
 });
