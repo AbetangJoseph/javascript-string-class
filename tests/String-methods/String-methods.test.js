@@ -78,4 +78,12 @@ describe('STRING METHODS', function() {
       expect(typeof number2.fromCurrency()).toEqual('number');
     });
   });
+
+  describe('inverseCase', function() {
+    it('should return each letter in the string as an inverse of its current case', function() {
+      var string = 'Mr. Ben';
+      expect(string.inverseCase()).toEqual('mR. bEN');
+      expect(typeof string.inverseCase()).toEqual('string');
+    });
+  });
 });
