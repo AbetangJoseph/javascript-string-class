@@ -46,11 +46,10 @@ describe('STRING METHODS', function() {
     });
   });
 
-  describe('word', function() {
+  describe('words', function() {
     it('should return a list of the words in the string, as an Array', function() {
-      var string = 'A software engineer at 25';
-      expect(string.word()).toContain('engineer');
-      expect(string.word()).not.toContain(25);
+      var string = 'A software engineer at 25.';
+      expect(string.words()).toContain('engineer');
     });
   });
 });

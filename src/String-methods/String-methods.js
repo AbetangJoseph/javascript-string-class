@@ -47,7 +47,7 @@ String.prototype.isQuestion = function() {
 /* 
 This method returns a list of the words in the string, as an Array excluding numbers and special characters
 */
-String.prototype.word = function() {
-  var regExPattern = /\b([^\d.\W][a-z]*)\b/gi;
+String.prototype.words = function() {
+  var regExPattern = /[^\s]+/gi;
   return this.match(regExPattern);
 };
