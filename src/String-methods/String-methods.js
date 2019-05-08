@@ -67,3 +67,12 @@ String.prototype.toCurrency = function() {
   var regExPattern = /\d(?=(\d{3}){1,}\.)/g;
   return this.replace(regExPattern, '$&,');
 };
+
+/* 
+This method returns a number representation of a currency String.
+e.g it changes '11,111.11' to 11111.11  
+*/
+String.prototype.fromCurrency = function() {
+  var regExPattern = /,+/g;
+  return Number.parseFloat(this.replace(regExPattern, ''));
+};
