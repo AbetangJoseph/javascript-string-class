@@ -26,4 +26,11 @@ describe('STRING METHODS', function() {
 			expect(string.toLower()).toEqual('a lower case sentence');
 		});
 	});
+
+	describe('ucFirst', function() {
+		it('should return a string with the first character capitalized', function() {
+			var string = 'i love javascript';
+			expect(string.ucFirst()).toEqual('I Love Javascript');
+		});
+	});
 });
