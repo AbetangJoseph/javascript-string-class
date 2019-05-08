@@ -52,4 +52,11 @@ describe('STRING METHODS', function() {
       expect(string.words()).toContain('engineer');
     });
   });
+
+  describe('wordCount', function() {
+    it('should return the number of words in the string', function() {
+      var string = 'Decagon software institute, No.1 in Nigeria';
+      expect(string.wordCount()).toEqual(6);
+    });
+  });
 });
