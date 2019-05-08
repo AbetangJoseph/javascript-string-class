@@ -98,3 +98,27 @@ String.prototype.alternatingCase = function() {
     return index % 2 === 0 ? alphabet.toLower() : alphabet.toUpper();
   });
 };
+
+/* 
+This method returns the numbers in words
+e.g it changes 325 to 'three two five'
+*/
+String.prototype.numberWords = function() {
+  var regExPattern = /\d/g;
+  var arrayOfWords = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine'
+  ];
+
+  return this.replace(regExPattern, function(digit) {
+    return arrayOfWords[digit] + ' ';
+  });
+};
