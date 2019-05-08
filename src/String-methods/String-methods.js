@@ -122,3 +122,12 @@ String.prototype.numberWords = function() {
     return arrayOfWords[digit] + ' ';
   });
 };
+
+/* 
+This method returns true if the string is a digit(one number)
+e.g 3 returns true but 30 returns false
+*/
+String.prototype.isDigit = function() {
+  var regExPattern = /^\d{1}$/g;
+  return regExPattern.test(this);
+};
