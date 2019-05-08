@@ -68,4 +68,14 @@ describe('STRING METHODS', function() {
       expect(number2.toCurrency()).toEqual('1,002,388,432.00');
     });
   });
+
+  describe('fromCurrency', function() {
+    it('should return a number representation of a currency String', function() {
+      var number1 = '11,111.11';
+      var number2 = '1,002,388,432.22';
+      expect(number1.fromCurrency()).toEqual(11111.11);
+      expect(number2.fromCurrency()).toEqual(1002388432.22);
+      expect(typeof number2.fromCurrency()).toEqual('number');
+    });
+  });
 });
