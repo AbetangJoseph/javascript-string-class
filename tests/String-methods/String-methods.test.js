@@ -59,4 +59,13 @@ describe('STRING METHODS', function() {
       expect(string.wordCount()).toEqual(6);
     });
   });
+
+  describe('toCurrency', function() {
+    it('should return a currency representation of the String', function() {
+      var number1 = '11111.11';
+      var number2 = '1002388432.00';
+      expect(number1.toCurrency()).toEqual('11,111.11');
+      expect(number2.toCurrency()).toEqual('1,002,388,432.00');
+    });
+  });
 });
