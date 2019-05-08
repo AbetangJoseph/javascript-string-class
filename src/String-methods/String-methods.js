@@ -76,3 +76,14 @@ String.prototype.fromCurrency = function() {
   var regExPattern = /,+/g;
   return Number.parseFloat(this.replace(regExPattern, ''));
 };
+
+/* 
+This method returns each letter in the string as an inverse of its current case
+e.g it changes 'Mr. Ben' to 'mR. bEN'
+*/
+String.prototype.inverseCase = function() {
+  var regExPattern = /[a-zA-Z]/g;
+  return this.replace(regExPattern, function(alphabet) {
+    return !alphabet.match(/[a-z]/) ? alphabet.toLower() : alphabet.toUpper();
+  });
+};
