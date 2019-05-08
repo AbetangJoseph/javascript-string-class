@@ -15,3 +15,13 @@ String.prototype.toUpper = function() {
 		return String.fromCharCode(alphabet.charCodeAt(0) - 32);
 	});
 };
+
+/* 
+This method checks a string for upper-case alphabet(s) and convert to lower-case
+*/
+String.prototype.toLower = function() {
+	var regExPattern = /[A-Z]/g;
+	return this.replace(regExPattern, function(alphabet) {
+		return String.fromCharCode(alphabet.charCodeAt(0) + 32);
+	});
+};
