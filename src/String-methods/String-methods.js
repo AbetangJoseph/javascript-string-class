@@ -9,7 +9,7 @@ String.prototype.hasVowels = function() {
 
 /* 
 This method checks a string for lower-case alphabet(s) and convert to upper-case
-e.g 
+e.g 'a capitalized sentence'.toUpper() outputs 'A CAPITALIZED SENTENCE'
 */
 String.prototype.toUpper = function() {
   // a global case sensitive search pattern for only lower-case alphabets
@@ -23,6 +23,7 @@ String.prototype.toUpper = function() {
 
 /* 
 This method checks a string for upper-case alphabet(s) and convert to lower-case
+e.g 'A LOWER CASE SENTENCE'.toLower() outputs 'a lower case sentence'
 */
 String.prototype.toLower = function() {
   // a global case sensitive search pattern for only upper-case alphabets
@@ -81,7 +82,7 @@ e.g it changes '11111.11' to '11,111.11'
 String.prototype.toCurrency = function() {
   // a global search pattern for digits that appear before the period sign in groups of three one time and beyound.
   var regExPattern = /\d(?=(\d{3}){1,}\.)/g;
-  // replace digits that match the pattern by adding a comma sign in front of each capture group
+  // replace digits that match the pattern by adding a comma(,) sign in front of each three digits in the capture group
   return this.replace(regExPattern, '$&,');
 };
 
@@ -90,7 +91,13 @@ This method returns a number representation of a currency String.
 e.g it changes '11,111.11' to 11111.11  
 */
 String.prototype.fromCurrency = function() {
+  // a global search pattern for one or more comma(s)
   var regExPattern = /,+/g;
+  /* 
+  the replaced method is called on the string and if any matches the pattern, 
+  all commas(,) are replaced with nothing. The return type would be a string,
+  so we pass it into the parseFloat method to turn it to a number type and maintain the floating point.
+*/
   return Number.parseFloat(this.replace(regExPattern, ''));
 };
 
@@ -99,7 +106,14 @@ This method returns each letter in the string as an inverse of its current case
 e.g it changes 'Mr. Ben' to 'mR. bEN'
 */
 String.prototype.inverseCase = function() {
-  var regExPattern = /[a-zA-Z]/g;
+  // a global case-insensitive search pattern for lower-case alphabets
+  var regExPattern = /[a-z]/gi;
+  /*
+  call the replace method on the string. 
+  if it matches the pattern, a callback function is invoked on that alphabet.
+  if it is not a lower-case alphabet, turn it to a lower-case alphabet else
+  turn it to upper-case
+  */
   return this.replace(regExPattern, function(alphabet) {
     return !alphabet.match(/[a-z]/) ? alphabet.toLower() : alphabet.toUpper();
   });
@@ -110,7 +124,15 @@ This method returns each letter in the string as an inverse of its current case
 e.g it changes 'Onomatopoeia' to 'oNoMaToPoEiA'
 */
 String.prototype.alternatingCase = function() {
+  // a global case-insensitive search pattern for lower-case alphabets
   var regExPattern = /[a-z]/gi;
+  /*
+  call the replace method on the string. 
+  if it matches the pattern, a callback function is invoked on that alphabet
+  and it's index in the string is picked and divided by 2. 
+  if no remainder, then it is even and the alphabet on that index is turned to lower-case,
+  other wise if odd, it is turned to upper-case
+  */
   return this.replace(regExPattern, function(alphabet, index) {
     return index % 2 === 0 ? alphabet.toLower() : alphabet.toUpper();
   });
@@ -121,6 +143,7 @@ This method returns the numbers in words
 e.g it changes 325 to 'three two five'
 */
 String.prototype.numberWords = function() {
+  // a global search pattern for digits(0-9) only
   var regExPattern = /\d/g;
   var arrayOfWords = [
     'zero',
@@ -135,6 +158,12 @@ String.prototype.numberWords = function() {
     'nine'
   ];
 
+  /*
+  call the replace method on the string. 
+  if it matches the pattern, a callback function is invoked on that digit
+  and the digit serves as an index for accessing the elements of the arrayOfWwords array
+  to get it's element.
+  */
   return this.replace(regExPattern, function(digit) {
     return arrayOfWords[digit] + ' ';
   });
@@ -142,9 +171,11 @@ String.prototype.numberWords = function() {
 
 /* 
 This method returns true if the string is a digit(one number)
-e.g 3 returns true but 30 returns false
+e.g '3'.isDigit() returns true but '30'.isDigit() returns false
 */
 String.prototype.isDigit = function() {
-  var regExPattern = /^\d{1}$/g;
+  // a global word boundary search pattern for a single digit
+  var regExPattern = /\b\d\b/g;
+  // call the test method on the pattern and return true if there is a match and false if there isn't.
   return regExPattern.test(this);
 };
