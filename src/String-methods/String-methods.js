@@ -51,3 +51,10 @@ String.prototype.words = function() {
   var regExPattern = /[^\s]+/gi;
   return this.match(regExPattern);
 };
+
+/* 
+This method returns the number of words in the string
+*/
+String.prototype.wordCount = function() {
+  return this.words().length;
+};
