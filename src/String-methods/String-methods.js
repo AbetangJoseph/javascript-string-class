@@ -25,3 +25,13 @@ String.prototype.toLower = function() {
 		return String.fromCharCode(alphabet.charCodeAt(0) + 32);
 	});
 };
+
+/* 
+This method converts the first character(s) in a string to upper-case
+*/
+String.prototype.ucFirst = function() {
+	var regExPattern = /(\b\w+\b)/g;
+	return this.replace(regExPattern, function(word) {
+		return word[0].toUpper() + word.substring(1);
+	});
+};
